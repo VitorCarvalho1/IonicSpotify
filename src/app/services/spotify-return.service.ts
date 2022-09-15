@@ -10,11 +10,11 @@ export class SpotifyReturnService {
 
 
   obterUrl() {
-    const authEndPoint = `${spotifyconfiguration.authEndpoint}?`;
-    const clientId = `${spotifyconfiguration.clientId}&`;
-    const redirectUrl = `${spotifyconfiguration.redirectUrl}&`;
-    const scopes = `scopes=${spotifyconfiguration.scopes.join('%20')}&`;
+    const authEndpoint = `${spotifyconfiguration.authEndpoint}?`;
+    const clientId = `client_id=${spotifyconfiguration.clientId}&`;
+    const redirectUrl = `redirect_uri=${spotifyconfiguration.redirectUrl}&`;
+    const scopes = `scope=${spotifyconfiguration.scopes.join('%20')}&`;
     const responseType = `response_type=token&show_dialog=true`;
-    return authEndPoint + clientId + redirectUrl + scopes + responseType;
+    return authEndpoint + clientId + redirectUrl + scopes + responseType; 
   }
 }

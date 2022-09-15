@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpotifyReturnService } from 'src/app/services/spotify-return.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,8 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private spotifyService: SpotifyReturnService) { }
 
   ngOnInit() {}
+
+
+  ativeBtn(){
+    window.location.href = this.spotifyService.obterUrl();
+  }
 
 }
